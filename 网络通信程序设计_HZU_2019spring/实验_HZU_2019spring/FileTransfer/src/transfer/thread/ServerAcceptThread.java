@@ -27,10 +27,6 @@ public class ServerAcceptThread extends Thread{
                 }
                 else
                     dataOutputStream.writeInt(0);
-
-                //dataOutputStream.close();//---调用close关闭流会导致socket关闭
-                //-------------状态信息流
-
             }
         }catch(Exception e){
             e.printStackTrace();

@@ -135,15 +135,6 @@ public class MainUI extends javax.swing.JFrame {
         }
     }
     /*
-    切换面板
-     */
-    private void changePane(JPanel panel){
-        this.remove(this.getContentPane());
-        this.setContentPane(panel);
-        //重新布局组件
-        this.validate();
-    }
-    /*
     初始化线程锁及线程操作对象
      */
     private void initThreadLock(){
@@ -202,6 +193,8 @@ public class MainUI extends javax.swing.JFrame {
         DetectPane.setLayout(new java.awt.BorderLayout());
         verticalBox=Box.createVerticalBox();
 
+        scrollPane.setMaximumSize(new java.awt.Dimension(3276, 32767));
+
         scrollPane.setBorder(null);
         scrollPane.getViewport().add(verticalBox);
         scrollPane.getViewport().setOpaque(false);
@@ -223,7 +216,7 @@ public class MainUI extends javax.swing.JFrame {
 
         fileDirectoryTip.setText("文件保存地址:");
 
-        settingButton.setText("设置");
+        settingButton.setText("选择");
         settingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 settingButtonActionPerformed(evt);
@@ -242,7 +235,7 @@ public class MainUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(fileDirectoryTip)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fileDirectory, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addComponent(fileDirectory, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(settingButton)
                 .addContainerGap())
@@ -264,11 +257,11 @@ public class MainUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DetectPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DetectPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DetectPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+            .addComponent(DetectPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
         );
 
         pack();
@@ -290,6 +283,8 @@ public class MainUI extends javax.swing.JFrame {
 
     private void settingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingButtonActionPerformed
         JFileChooser jFileChooser=new JFileChooser(fileDirectory.getSelectedText());
+        jFileChooser.setDialogTitle("选择文件保存路径");
+        jFileChooser.setApproveButtonText("确定");
         jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         jFileChooser.setMultiSelectionEnabled(false);
         int result=jFileChooser.showOpenDialog(this);
@@ -309,7 +304,6 @@ public class MainUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_settingButtonActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */

@@ -18,10 +18,8 @@ public class SendThread extends Thread{
 
     private DataInputStream dataInputStream,stateInputStream;
     private InetSocketAddress address;
-
     //进度条
     private ProgressBarDialog progressBarDialog;
-
     //等待操作框
     private LoadDialog loadDialog;
     public SendThread(File selectedFile, InetSocketAddress address){
@@ -29,7 +27,6 @@ public class SendThread extends Thread{
         this.selectedFile=selectedFile;
         this.address=address;
         socket=new Socket();
-
     }
 
     @Override
@@ -38,6 +35,7 @@ public class SendThread extends Thread{
             byte[] buffer=new byte[10240];
             //0-为无限等待
            socket.setSoTimeout(0);
+            System.out.println("test");
             //TCP连接--设置了连接超时
             socket.connect(address,3000);
             //接收目标状态信息流
@@ -73,7 +71,6 @@ public class SendThread extends Thread{
                     //设置进度条
                     progressBarDialog.loadProgressBar(len);
                     //System.out.println(len/size*100);
-
                 }
                 progressBarDialog.dispose();
 
@@ -87,8 +84,6 @@ public class SendThread extends Thread{
                JOptionPane.showMessageDialog(null,"目标拒绝接收了你的文件！","Tips：",JOptionPane.PLAIN_MESSAGE);
             }
             socket.close();
-
-
         }catch(Exception e){
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "连接异常，请检查网络后继续");

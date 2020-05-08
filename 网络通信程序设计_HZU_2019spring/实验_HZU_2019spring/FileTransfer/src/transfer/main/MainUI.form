@@ -23,12 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="DetectPane" alignment="1" max="32767" attributes="0"/>
+          <Component id="DetectPane" alignment="1" pref="646" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="DetectPane" alignment="1" pref="265" max="32767" attributes="0"/>
+          <Component id="DetectPane" alignment="1" pref="361" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -41,6 +41,11 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
       <SubComponents>
         <Container class="javax.swing.JScrollPane" name="scrollPane">
+          <Properties>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[3276, 32767]"/>
+            </Property>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="scrollPane.setBorder(null);&#xa;scrollPane.getViewport().add(verticalBox);&#xa;scrollPane.getViewport().setOpaque(false);&#xa;scrollPane.setOpaque(false);"/>
           </AuxValues>
@@ -90,7 +95,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="fileDirectoryTip" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="fileDirectory" pref="226" max="32767" attributes="0"/>
+                      <Component id="fileDirectory" pref="433" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="settingButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -119,7 +124,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="settingButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x8bbe;&#x7f6e;"/>
+                <Property name="text" type="java.lang.String" value="&#x9009;&#x62e9;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="settingButtonActionPerformed"/>
