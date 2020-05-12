@@ -1,0 +1,22 @@
+    1  ls
+    2  ls
+    3  cd /mnt/hgfs/chenqinghui
+    4  pwd
+    5  useradd hzu01
+    6  passwd hzu01
+    7  useradd hzu02
+    8  passwd hzu02
+    9  usermod -aG wheel hzu02
+   10  su - hzu01
+   11  echo -e hello"\b"world
+   12  echo -e hello linux"\n"i am jack
+   13  date
+   14  cal 10 1949
+   15  uname -rn
+   16  init 3
+   17  systemctl set-default multi-user.target
+   18  init 6
+   19  reboot
+   20  init 5
+   21  systemctl set-default graphical.target
+   22  history>chenqinghui.txt
